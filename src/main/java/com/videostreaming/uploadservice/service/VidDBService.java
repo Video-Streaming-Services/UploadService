@@ -13,7 +13,7 @@ public class VidDBService {
 
     @Autowired
     public VidDBService(WebClient.Builder webClient) {
-        this.webClient = webClient.baseUrl("http://database:8090").build();
+        this.webClient = webClient.baseUrl("http://dbcontroller:8090").build();
     }
 
     public boolean putVidToDB(VidMetaData data) {

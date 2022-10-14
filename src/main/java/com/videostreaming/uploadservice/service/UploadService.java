@@ -15,7 +15,7 @@ public class UploadService {
 
     @Autowired
     public UploadService(WebClient.Builder webClient) {
-        this.webClient = webClient.baseUrl("http://filestorage:8060").build();
+        this.webClient = webClient.baseUrl("http://storage:8060").build();
     }
 
     public boolean upload(String fileName, MultipartFile multipartFile) {
