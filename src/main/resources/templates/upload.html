@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Upload</title>
+</head>
+<body>
+<div align="center">
+    <div><h2>Upload your video</h2></div>
+    <div class="column">
+        <h2>
+            [[${message}]]
+        </h2>
+        <p>
+        <div>
+            <form action="uploadF" method="post" enctype="multipart/form-data">
+                <p>
+                    Video Name:
+                    <input type="text" name="name" size="30" required/>
+                </p>
+
+                <p>
+                    Video Description:
+                    <textarea type="text" name="des" size="100" required></textarea>
+                </p>
+
+                <p>
+                    <input type="file" name="file" required/>
+                </p>
+
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+            </form>
+            <br>
+            <a href="/logout"> logout</a>
+        </div>
+        </p>
+    </div>
+</div>
+</body>
+</html>
