@@ -2,6 +2,7 @@ package com.videostreaming.uploadservice.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.MultipartBodyBuilder;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class UploadService {
     private final WebClient webClient;
+    @Value("${storage}")
+    private String storageUrl;
+    @Value("${storage.port}")
+    private String storagePort;
 
     @Autowired
     public UploadService(WebClient.Builder webClient) {
-        this.webClient = webClient.baseUrl("http://storage:8060").build();
+        this.webClient = webClient.baseUrl("http://" + storageUrl + ":" + storagePort).build();
     }
 
     public boolean upload(String fileName, MultipartFile multipartFile) {
